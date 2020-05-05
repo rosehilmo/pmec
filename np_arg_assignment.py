@@ -3,9 +3,16 @@
 import numpy as np
 import pickle
 import argparse
+import os
+from os import path
+
+outputfolder='np_arg_assignment_output'
+
+if path.exists(outputfolder) == False:
+    os.mkdir(outputfolder)
 
 filename='results.pickle'
-outfile=open(filename,'wb')
+outfile=open(outputfolder + '/' + filename,'wb')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-x','--x',nargs='+',type=int,help='<Required> Set flag', required=True)
